@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Password Strength Checker</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #eef2f3; padding: 40px; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .strength { font-size: 1.2em; font-weight: bold; margin-top: 20px; }
+        .feedback { color: #555; margin-top: 10px; }
+        input, button { width: 100%; padding: 10px; margin-top: 15px; font-size: 1em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Advanced Password Strength Checker</h2>
+        <form method="POST">
+            <input type="text" name="password" placeholder="Enter your password" required>
+            <button type="submit">Evaluate Password</button>
+        </form>
+        {% if strength %}
+        <div class="strength">Strength: {{ strength }}</div>
+        <div class="feedback">{{ feedback }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
